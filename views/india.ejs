@@ -1,0 +1,80 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <h1>Covid-19 Cases in India</h1>
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    <h2>Active Cases</h2>
+                </div>
+                <div class="description">
+                    <%= Cases.total.active %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    <h2>Recovered</h2>
+                </div>
+                <div class="description">
+                    <%= Cases.total.recovered %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    <h2>Total Death</h2>
+                </div>
+                <div class="description">
+                    <%= Cases.total.deaths %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    <h2>Total Cases</h2>
+                </div>
+                <div class="description">
+                    <%= Cases.total.total %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+<table class="ui called table">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Active cases</th>
+            <th>Recovered</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% Cases.states.forEach( (state) => { %> 
+        <tr>
+            <td>
+                <h5> <%= state.state %> </h5>
+            </td>
+            <td>
+                <%= state.active %> 
+            </td>
+            <td>
+                <%= state.recovered %> 
+            </td>
+            <td>
+                <%= state.deaths %> 
+            </td>
+        </tr>
+    <% }) %>
+</tbody>
+</table>
+
+</div>
+ 
+<%- include('partials/footer') -%>

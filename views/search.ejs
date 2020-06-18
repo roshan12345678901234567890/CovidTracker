@@ -1,0 +1,84 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <h1>Your Searh Result for : <%= country.country %> </h1>
+    <div class="ui card card-search">
+        <div class="content">
+            <div class="ui items items-search">
+                <div class="item item-row">
+                    <div class="ui large image">
+                        <img src="<%= country.countryInfo.flag %>" alt="">
+                    </div>
+                    <div class="ui header left">
+                        Continent <%= country.continent %> : Total Population : <%= country.population %>
+                     </div>
+                </div>
+                <div class="item">
+                        <table class="ui defination table">
+                            <thead>
+                              <tr>
+                              <th></th>
+                              <th>Data</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr>
+                                <td>Cases</td>
+                                <td><%= country.cases %></td>
+                              </tr>
+                              <tr>
+                                <td>Recovered</td>
+                                <td><%= country.recovered %></td>
+                              </tr>
+                              <tr>
+                                <td>Deaths</td>
+                                <td><%= country.deaths %></td>
+                              </tr>
+                              <tr>
+                                <td>Acive</td>
+                                <td><%= country.active %></td>
+                              </tr>
+                              <tr>
+                                <td>Critical</td>
+                                <td><%= country.critical %></td>
+                              </tr>
+                              <tr>
+                                <td>Tests</td>
+                                <td><%= country.tests %></td>
+                              </tr>
+                              <tr>
+                                <td>Tests per One Million</td>
+                                <td><%= country.testsPerOneMillion %></td>
+                              </tr>
+                              <tr>
+                                <td>Today's Cases</td>
+                                <td><%= country.todayCases %></td>
+                              </tr>
+                              <tr>
+                                <td>Today Recovered</td>
+                                <td><%= country.recovered %></td>
+                              </tr>
+                              <tr>
+                                <td>Today's Deaths</td>
+                                <td><%= country.deaths %></td>
+                              </tr>
+                              <tr>
+                                <td>Cases Per one Million</td>
+                                <td><%= country.casesPerOneMillion %></td>
+                              </tr>
+                              <tr>
+                                <td>Deaths Per One Million</td>
+                                <td><%= country.deathsPerOneMillion %></td>
+                              </tr>
+                            </tbody>
+                          </table> 
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer') -%>

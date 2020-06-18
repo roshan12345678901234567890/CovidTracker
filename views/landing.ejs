@@ -1,0 +1,130 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <h1>Track Covid Cases around the World</h1>
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Total Cases
+                </div>
+                <div class="description">
+                    <%= Countries.cases %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Recovered
+                </div>
+                <div class="description">
+                    <%= Countries.recovered %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Deaths
+                </div>
+                <div class="description">
+                    <%= Countries.deaths %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Cases per One Million
+                </div>
+                <div class="description">
+                    <%= Countries.casesPerOneMillion %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Deaths per One Million
+                </div>
+                <div class="description">
+                    <%= Countries.deathsPerOneMillion %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Today's Cases
+                </div>
+                <div class="description">
+                    <%= Countries.todayCases %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Today's Recovered
+                </div>
+                <div class="description">
+                    <%= Countries.todayRecovered %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Todya's Deaths
+                </div>
+                <div class="description">
+                    <%= Countries.todayDeaths %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Active
+                </div>
+                <div class="description">
+                    <%= Countries.active %>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    Critical
+                </div>
+                <div class="description">
+                    <%= Countries.critical %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flag-container">
+        <% conCase.forEach( (country) => { %>
+        
+            <div class="flag ui card">
+            <a href="/covid/<%= country.country %>">
+            <img  classe="ui avatar image" src="<%= country.countryInfo.flag %>" alt="">
+            <div class="content">
+                <div class="header">
+                    Active Cases
+                </div>
+                <div class="description">
+                    <%= country.cases %>
+                </div>
+            </a>
+            </div>
+        </div>          
+        <% })%>
+    </div>
+</div>
+
+<%- include('partials/footer') -%>
